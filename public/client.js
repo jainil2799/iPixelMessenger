@@ -5,8 +5,10 @@ let messageArea = document.querySelector('.message__area')
 textarea.focus()
 const color = {
     red:"--themecolor: rgb(250, 4, 4);" , 
-    pink:"--themecolor: rgb(175, 0, 137);"
-
+    pink:"--themecolor: rgb(175, 0, 137);" ,
+    blue:"--themecolor: rgb(0, 84, 194)" ,
+    green:"--themecolor: rgb(0, 156, 13)" ,
+    yellow:"--themecolor: rgb(212, 216, 0)"
 }
 
 
@@ -35,15 +37,30 @@ function sendMessage(message) {
     if (msg.message == "!red") {
         theme(color.red)
         socket.emit('color', color.red)
-        console.log (color.red)
+        
     }
     if (msg.message == "!pink") {
         theme(color.pink)
         socket.emit('color', color.pink)
-        console.log (color.pink)
+        
     }
 
+    if (msg.message == "!blue") {
+        theme(color.blue)
+        socket.emit('color', color.blue)
 
+    }
+    if (msg.message == "!green") {
+        theme(color.green)
+        socket.emit('color', color.green)
+
+    }
+
+    if (msg.message == "!yellow") {
+        theme(color.yellow)
+        socket.emit('color', color.yellow)
+
+    }
 }
 
 function appendMessage(msg, type) {
