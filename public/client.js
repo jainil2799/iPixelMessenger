@@ -63,7 +63,7 @@ function sendMessage(message) {
 
     }
     if (msg.message == "!orange") {
-        theme(color.orenge)
+        theme(color.orange)
         socket.emit('color', color.orange)
 
     }
