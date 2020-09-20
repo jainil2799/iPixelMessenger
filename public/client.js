@@ -8,7 +8,8 @@ const color = {
     pink:"--themecolor: rgb(175, 0, 137);" ,
     blue:"--themecolor: rgb(0, 84, 194)" ,
     green:"--themecolor: rgb(0, 156, 13)" ,
-    yellow:"--themecolor: rgb(255, 255, 0)"
+    yellow:"--themecolor: rgb(255, 255, 0)" ,
+    orange:"--themecolor: rgb(255, 115, 0)"
 }
 
 
@@ -61,6 +62,13 @@ function sendMessage(message) {
         socket.emit('color', color.yellow)
 
     }
+    if (msg.message == "!orange") {
+        theme(color.orenge)
+        socket.emit('color', color.orange)
+
+    }
+
+
 }
 
 function appendMessage(msg, type) {
