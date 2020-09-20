@@ -8,7 +8,7 @@ const color = {
     pink:"--themecolor: rgb(175, 0, 137);" ,
     blue:"--themecolor: rgb(0, 84, 194)" ,
     green:"--themecolor: rgb(0, 156, 13)" ,
-    yellow:"--themecolor: rgb(212, 216, 0)"
+    yellow:"--themecolor: rgb(255, 255, 0)"
 }
 
 
