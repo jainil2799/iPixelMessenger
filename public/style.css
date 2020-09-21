@@ -20,9 +20,14 @@ body {
     background: #F8F8F8;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+
 section.chat__section {
+    overflow: auto;
     width: 800px;
-    max-width: 90%;
+    height:100%;
     background: rgb(255, 255, 255);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -72,6 +77,9 @@ textarea {
     color: #ffffff;
     margin-left: auto;
 }
+
+
+
 .message h4 {
     position: absolute;
     top: -20px;
