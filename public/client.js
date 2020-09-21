@@ -2,7 +2,9 @@ const socket = io()
 let name;
 let textarea = document.querySelector('#textarea')
 let messageArea = document.querySelector('.message__area')
+let button = document.querySelector('.send-button')
 textarea.focus()
+
 const color = {
     red:"--themecolor: rgb(250, 4, 4);" , 
     pink:"--themecolor: rgb(175, 0, 137);" ,
@@ -11,18 +13,20 @@ const color = {
     yellow:"--themecolor: rgb(255, 255, 0)" ,
     orange:"--themecolor: rgb(255, 115, 0)"
 }
-
+ 
 
 do {
     name = prompt('Please enter your name: ')
 } while(!name)
-
+ socket.emit('new-user', name);
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
         sendMessage(e.target.value)
     }
 })
-
+  button.addEventListener('click', e => {
+    sendMessage(textarea.value)
+  })
 function sendMessage(message) {
     let msg = {
         user: name,
@@ -101,9 +105,30 @@ socket.on('message', (msg) => {
     socket.on ('themecolor', color=>{
         theme(color)
     })
+    socket.on("user-connected" , data => {
+        logmessage(data.name)
+
+    })
+    socket.on ("user-disconnected", data =>{
+        logoutmessage(data.name)
+
+    })
 function scrollToBottom() {
     messageArea.scrollTop = messageArea.scrollHeight
 }
  function theme(value) {
       document.documentElement.style.cssText = value;
  }
+  function logmessage(value){
+      const el = document.createElement('div')
+      el.classList.add('khammaghani')
+      el.innerHTML = value + " joined"
+      messageArea.appendChild(el)
+  }
+  function logoutmessage(value){
+    const el = document.createElement('div')
+    el.classList.add('khammaghani')
+    el.innerHTML = value + " left"
+    messageArea.appendChild(el)
+}
+    

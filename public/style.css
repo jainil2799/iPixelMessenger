@@ -1,5 +1,5 @@
 :root {
-    --themecolor: rgb(0, 97, 153);
+    --themecolor: rgb(255, 115, 0);
     --conmesscolor: rgb(255, 115, 0); 
     --messageinputcolor: rgb(241, 247, 255);
     --maincontainerbg: rgb(248, 248, 248);
@@ -26,8 +26,8 @@ body {
 
 section.chat__section {
     overflow: auto;
-    width: 800px;
-    height:100%;
+    width: 740px;
+    height:80%;
     background: rgb(255, 255, 255);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -44,6 +44,7 @@ section.chat__section {
     margin-left: 10px;
 }
 .message__area{
+    overflow: auto;
     height: 500px;
     padding: 16px;
     display: flex;
@@ -51,16 +52,50 @@ section.chat__section {
     overflow-y: auto;
     padding-top: 40px;
 }
-textarea {
-    width: 100%;
-    border: none;
-    padding: 20px;
-    font-size: 16px;
-    outline: none;
-    background: #f1f1f1;
+ .footer{
+     display: flex;
+     
+ }
+ .send-button {
+    margin-left: 4px;
+    border: 2px solid var(--themecolor);
+    outline: 0;
+    background: #fff;
     border-radius: 20px;
+    font-size: 16px;
+    padding: 0 20px;
+    transition: 0.15s;
 }
 
+.send-button:hover {
+    color: #fff;
+    background: var(--themecolor);
+}
+   .sendbutton:active, .sendbutton:focus{
+       outline: 0;
+   }
+ /* .send-button{
+     background-color: var(--themecolor);
+     width: 65px;
+     border-radius: 20px;
+     border: 0px;
+ } */
+textarea {
+    flex: 1;
+    border: 5px;
+    padding: 20px;
+    font-size: 16px;
+    outline: 10px;
+    background: #ebebeb;
+    border-radius: 20px;
+}
+.khammaghani{
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #cecece;
+    padding: 12px 24px;
+}
 .message {
     padding: 8px 12px; 
     border-radius: 29px; 
