@@ -19,6 +19,7 @@ do {
     name = prompt('Please enter your name: ')
 } while(!name)
  socket.emit('new-user', name);
+ 
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
         sendMessage(e.target.value)
@@ -107,7 +108,7 @@ socket.on('message', (msg) => {
     })
     socket.on("user-connected" , data => {
         logmessage(data.name)
-
+        sidebarusers(data.users);
     })
     socket.on ("user-disconnected", data =>{
         logoutmessage(data.name)
@@ -132,3 +133,15 @@ function scrollToBottom() {
     messageArea.appendChild(el)
 }
     
+function sidebarusers(users) {
+    //log in to side bar
+    useractivelist.innerHTML = "";
+    Object.keys(users).forEach(key => {
+        // console.log(users[key])
+        const newuser = document.createElement("div");
+        newuser.classList = "activeusersname";
+        newuser.setAttribute("data-inital", getinitals(users[key]));
+        newuser.innerHTML = users[key];
+        useractivelist.append(newuser);
+    });
+}

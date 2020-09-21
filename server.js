@@ -22,6 +22,7 @@ io.on('connection', (socket) => {
     socket.on('new-user', name => {
         users[socket.id] = name;
         io.emit('user-connected', { name: users[socket.id], users: users });
+        
 
     });
     socket.on('message', (msg) => {
