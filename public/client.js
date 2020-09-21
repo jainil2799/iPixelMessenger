@@ -133,15 +133,3 @@ function scrollToBottom() {
     messageArea.appendChild(el)
 }
     
-function sidebarusers(users) {
-    //log in to side bar
-    useractivelist.innerHTML = "";
-    Object.keys(users).forEach(key => {
-        // console.log(users[key])
-        const newuser = document.createElement("div");
-        newuser.classList = "activeusersname";
-        newuser.setAttribute("data-inital", getinitals(users[key]));
-        newuser.innerHTML = users[key];
-        useractivelist.append(newuser);
-    });
-}
