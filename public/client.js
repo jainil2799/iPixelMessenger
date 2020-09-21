@@ -7,7 +7,7 @@ textarea.focus()
 
 const color = {
     red:"--themecolor: rgb(250, 4, 4);" , 
-    pink:"--themecolor: rgb(175, 0, 137);" ,
+    pink:"--themecolor: rgb(255, 15, 183);" ,
     blue:"--themecolor: rgb(0, 84, 194)" ,
     green:"--themecolor: rgb(0, 156, 13)" ,
     yellow:"--themecolor: rgb(255, 255, 0)" ,

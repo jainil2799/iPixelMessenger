@@ -1,6 +1,6 @@
 :root {
     --themecolor: rgb(255, 115, 0);
-    --conmesscolor: rgb(255, 115, 0); 
+    --conmesscolor: rgb(255, 15, 183); 
     --messageinputcolor: rgb(241, 247, 255);
     --maincontainerbg: rgb(248, 248, 248);
     --white: #fff;
@@ -16,7 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+     min-height: 100vh; 
     background: #F8F8F8;
     font-family: 'Roboto', sans-serif;
 }
@@ -27,16 +27,19 @@ body {
 section.chat__section {
     overflow: auto;
     width: 800px;
-    height:300%;
+    /* height:600px; */
+    flex: 1;
     background: rgb(255, 255, 255);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+
 .brand {
     padding: 20px;
     background: var( --themecolor);
     display: flex;
     align-items: center;
 }
+
 .brand h1 {
     text-transform: uppercase;
     font-size: 20px;
@@ -45,7 +48,7 @@ section.chat__section {
 }
 .message__area{
     overflow: auto;
-    height: 500px;
+    height: calc(100% - 142px);
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -82,7 +85,7 @@ section.chat__section {
  } */
 textarea {
     flex: 1;
-    border: 5px;
+    border: 2px solid var(--themecolor);
     padding: 20px;
     font-size: 16px;
     outline: 10px;
@@ -122,3 +125,21 @@ textarea {
     color: #333;
     font-size: 14px;
 }
+ @media screen and (max-width: 800px ){
+     body{
+         align-items:  flex-start; 
+         justify-content: flex-start;
+
+     }
+     section.chat__section{
+         display: flex;
+         flex-direction: column;
+         
+         /* height: auto; */
+         
+     }
+     .message__area{
+         flex: 1;
+         
+     }
+ }
