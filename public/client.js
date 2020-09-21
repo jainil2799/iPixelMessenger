@@ -108,7 +108,7 @@ socket.on('message', (msg) => {
     })
     socket.on("user-connected" , data => {
         logmessage(data.name)
-        sidebarusers(data.users);
+     sidebarusers(data.users);
     })
     socket.on ("user-disconnected", data =>{
         logoutmessage(data.name)
