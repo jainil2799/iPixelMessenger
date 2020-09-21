@@ -103,6 +103,7 @@ section.chat__section {
     padding: 12px 24px;
 }
 .message {
+    word-wrap: break-word;
     padding: 8px 12px; 
     border-radius: 29px; 
     margin-bottom: 20px;
