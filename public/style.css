@@ -16,7 +16,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-     min-height: 100vh; 
+    height: 100vh; 
+    flex-direction: column;
     background: #F8F8F8;
     font-family: 'Roboto', sans-serif;
 }
@@ -26,8 +27,10 @@ body {
 
 section.chat__section {
     overflow: auto;
-    width: 800px;
-    /* height:600px; */
+    max-width: 800px;
+    width: 100%;
+    max-height:600px;
+    height: 100%;
     flex: 1;
     background: rgb(255, 255, 255);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -48,12 +51,11 @@ section.chat__section {
 }
 .message__area{
     overflow: auto;
-    height: calc(100% - 142px);
+    height: calc(100% - 119px);
     padding: 16px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    padding-top: 40px;
 }
  .footer{
      display: flex;
@@ -83,10 +85,10 @@ section.chat__section {
      border-radius: 20px;
      border: 0px;
  } */
-textarea {
+#textarea {
     flex: 1;
     border: 2px solid var(--themecolor);
-    padding: 20px;
+    padding: 8px;
     font-size: 16px;
     outline: 10px;
     background: #ebebeb;
@@ -94,7 +96,8 @@ textarea {
 }
 .khammaghani{
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom: 4px;
+    margin-top: 15px;
     border-radius: 10px;
     background-color: #cecece;
     padding: 12px 24px;
@@ -102,7 +105,7 @@ textarea {
 .message {
     padding: 8px 12px; 
     border-radius: 29px; 
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     max-width: 300px;
     position: relative;
 }
@@ -126,20 +129,21 @@ textarea {
     font-size: 14px;
 }
  @media screen and (max-width: 800px ){
-     body{
-         align-items:  flex-start; 
-         justify-content: flex-start;
+    body{
+        align-items:  flex-start; 
+        justify-content: flex-start;
 
-     }
-     section.chat__section{
-         display: flex;
-         flex-direction: column;
-         
-         /* height: auto; */
-         
-     }
-     .message__area{
-         flex: 1;
+    }
+    section.chat__section{
+        display: flex;
+        flex-direction: column;
+        max-height:800px;
+        height: 100%;
+        /* height: auto; */
          
      }
+    .message__area{
+        flex: 1;
+         
+    }
  }
