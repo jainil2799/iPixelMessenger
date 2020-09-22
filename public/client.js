@@ -12,7 +12,7 @@ const color = {
     green:"--themecolor: rgb(0, 156, 13)" ,
     yellow:"--themecolor: rgb(255, 255, 0)" ,
     orange:"--themecolor: rgb(255, 102, 0)" ,
-    purple:"--themecolr: rgb(97, 0, 189)"
+    purple:"--themecolor: rgb(97, 0, 189)"
 }
  
 
