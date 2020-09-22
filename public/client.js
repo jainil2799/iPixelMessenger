@@ -8,10 +8,11 @@ textarea.focus()
 const color = {
     red:"--themecolor: rgb(250, 4, 4);" , 
     pink:"--themecolor: rgb(255, 15, 183);" ,
-    blue:"--themecolor: rgb(0, 84, 194)" ,
+    blue:"--themecolor: rgb(68, 0, 255)" ,
     green:"--themecolor: rgb(0, 156, 13)" ,
     yellow:"--themecolor: rgb(255, 255, 0)" ,
-    orange:"--themecolor: rgb(255, 115, 0)"
+    orange:"--themecolor: rgb(255, 102, 0)" ,
+    purple:"--themecolr: rgb(97, 0, 189)"
 }
  
 
@@ -72,6 +73,12 @@ function sendMessage(message) {
         socket.emit('color', color.orange)
 
     }
+    if (msg.message == "!purple") {
+        theme(color.purple)
+        socket.emit('color', color.purple)
+
+    }
+
 
 
 }
